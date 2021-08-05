@@ -1,0 +1,8 @@
+
+<div class="container">
+
+  <div class="menu-option mat-elevation-z6" *ngFor="let option of menuOptions" (click)="handleRedirect(option.link)">
+    <img [src]="option.image" alt="">
+    <h1>{{option.title}}</h1>
+  </div>
+</div>

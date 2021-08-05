@@ -1,0 +1,76 @@
+<div class="loading-container" *ngIf="loading">
+  <mat-spinner class="loading"></mat-spinner>
+</div>
+<div class="container">
+  <div class="chips">
+    <mat-form-field appearance="outline">
+      <mat-label>Select or type lenguage / framework name</mat-label>
+      <mat-chip-list #chipList>
+        <mat-chip
+          *ngFor="let item of items"
+          [selectable]="selectable"
+          [removable]="removable"
+          (removed)="remove(item)"
+        >
+          {{ item }}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input
+          placeholder="New lenguage or framework..."
+          #fruitInput
+          [formControl]="itemControl"
+          [matAutocomplete]="auto"
+          [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="add($event)"
+        />
+      </mat-chip-list>
+      <mat-autocomplete
+        #auto="matAutocomplete"
+        (optionSelected)="selected($event)"
+      >
+        <mat-option *ngFor="let item of filteredItems | async" [value]="item">
+          {{ item }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+  <div class="charts">
+    <div class="dark">
+      <h1 class="title">Posted Jobs</h1>
+      <ngx-charts-bar-horizontal
+        [view]="[800, 600]"
+        [scheme]="colorScheme"
+        [results]="jobs"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        xAxisLabel="Number of posted Jobs"
+        yAxisLabel="Lenguages / Frameworks"
+        (select)="onSelect($event)"
+      >
+      </ngx-charts-bar-horizontal>
+    </div>
+    <div class="dark">
+      <h1 class="title">Developers with experience (> 1 Year)</h1>
+      <ngx-charts-bar-horizontal
+        [view]="[800, 600]"
+        [scheme]="colorScheme"
+        [results]="developers"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        xAxisLabel="Number of Developers"
+        yAxisLabel="Lenguages / Frameworks"
+        (select)="onSelect($event)"
+      >
+      </ngx-charts-bar-horizontal>
+    </div>
+  </div>
+</div>

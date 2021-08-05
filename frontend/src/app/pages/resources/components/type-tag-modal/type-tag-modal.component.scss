@@ -1,0 +1,23 @@
+.container{
+    width: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .input{
+        width: 100%;
+    }
+    .actions{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        button {
+            margin: 0 1vh;
+            min-width: 35%;
+        }
+    }
+}
+mat-form-field {
+    width: 100%;
+}

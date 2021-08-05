@@ -1,0 +1,45 @@
+.container {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  // background-color: #1b1e27;
+  align-items: center;
+  margin: 4vh;
+  flex-direction: column;
+}
+
+h1.title {
+  font-weight: bold;
+  font-size: 3vh;
+}
+
+.charts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.chips {
+  width: 60vh;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+
+.loading-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-color: rgba(98, 112, 99, 0.315);
+  z-index: 100;
+}
+.loading{
+}

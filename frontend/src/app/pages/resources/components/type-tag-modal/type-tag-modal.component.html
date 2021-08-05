@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>What do you want to learn?</h1>
+  <div class="input">
+    <mat-form-field appearance="outline">
+      <mat-label>Type a topic</mat-label>
+      <input matInput placeholder="Ex: JavaScript" [(ngModel)]="tag" />
+      <mat-hint>Only one topic at time</mat-hint>
+    </mat-form-field>
+  </div>
+  <div class="actions">
+    <button color="primary" mat-button (click)="dialogRef.close()">
+      Back
+    </button>
+
+    <button
+      color="primary"
+      mat-raised-button
+      (click)="tag == '' ? null : dialogRef.close(tag)"
+    >
+      Learn {{ tag }}
+    </button>
+  </div>
+</div>

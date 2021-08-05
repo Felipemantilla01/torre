@@ -1,0 +1,54 @@
+
+<div class="container">
+  <form class="login-container" [formGroup]="loginForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input formControlName="user" matInput autocomplete="false" />
+      <mat-error>Required field</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        autocomplete="false"
+        formControlName="password"
+        [type]="hidePassword ? 'password' : 'text'"
+      />
+      <button
+        style="color: rgb(175, 175, 175) !important"
+        mat-icon-button
+        matSuffix
+        (click)="hidePassword = !hidePassword"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hidePassword"
+      >
+        <mat-icon>{{
+          hidePassword ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </button>
+      <mat-error>Required field</mat-error>
+    </mat-form-field>
+
+    <div class="buttons">
+      <button
+        type="submit"
+        (click)="handleSignUp()"
+        mat-button
+        color="primary"
+        class="login-button"
+      >
+        SIGN UP
+      </button>
+      <button
+        type="submit"
+        (click)="handleSignIn()"
+        mat-raised-button
+        color="primary"
+        class="login-button"
+      >
+        SIGN IN
+      </button>
+    </div>
+  </form>
+</div>

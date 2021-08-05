@@ -1,0 +1,13 @@
+<div class="route-toolbar">
+  <div routerLink="/home">BACK</div>
+  <div routerLink="/home">CANCEL</div>
+</div>
+
+
+<div class="container">
+  <app-statistics
+    [allItems]="allItems"
+    [items]="defaultSelectedItems"
+    (onSelectTag)="handleSelectTag($event)"
+  ></app-statistics>
+</div>

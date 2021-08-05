@@ -1,0 +1,33 @@
+<div class="container">
+  <h1 class="title">{{ data.tag }}</h1>
+  <div class="numbers">
+    <div class="number-card">
+      <h1>{{ data.jobs || "Loading" }}</h1>
+      <h4>Posted Jobs</h4>
+    </div>
+    <div class="number-card">
+      <h1>{{ data.developers || "Loading" }}</h1>
+      <h4>Developers</h4>
+    </div>
+  </div>
+  <div class="rate">
+    <h1 [ngClass]="{ negative: negative, positive: !negative }">
+      <span>{{ negative ? "-" : "" }}</span
+      >{{ deficit | number }} %
+    </h1>
+    <h4>Developers Deficit</h4>
+    <br />
+    <h1>$USD 0.00</h1>
+    <h4>Average pay</h4>
+    <h5>This average is taked with the first 20 jobs</h5>
+  </div>
+  <div class="actions">
+    <button color="primary" mat-button (click)="dialogRef.close()">
+      Close
+    </button>
+
+    <button color="primary" mat-raised-button (click)="handleLearn(data.tag)">
+      Learn {{ data.tag }}
+    </button>
+  </div>
+</div>

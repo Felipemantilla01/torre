@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "torre-edc01": {
+      "hosting": {
+        "frontend": [
+          "torre-edc01"
+        ]
+      }
+    }
+  }
+}

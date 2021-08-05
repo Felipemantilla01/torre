@@ -1,0 +1,18 @@
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 5vh;
+    h1{
+        font-size: 4vh;
+    }
+
+    .resources {
+        width: 100%;
+        // background-color: red;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

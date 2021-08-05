@@ -1,0 +1,18 @@
+.container{
+    width: 17vh;
+    height: 17vh;
+    border-radius: 3vh;
+    border: greenyellow dashed 1px;
+    margin: 5vh;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 80%;
+    }
+    
+}
+.container:hover{
+    box-shadow: 0 10px 13px -6px rgba(0,0,0,.2),0 20px 31px 3px rgba(0,0,0,.14),0 8px 38px 7px rgba(0,0,0,.12)!important;
+}

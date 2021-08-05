@@ -17,9 +17,10 @@
     </h1>
     <h4>Developers Deficit</h4>
     <br />
-    <h1>$USD 0.00</h1>
+    <mat-spinner *ngIf="loading" [diameter]="70"></mat-spinner>
+    <h1 *ngIf="!loading">$USD {{ avgPayments.avgPayment | number }}</h1>
     <h4>Average pay</h4>
-    <h5>This average is taked with the first 20 jobs</h5>
+    <h5>{{ "This average is taked with the first " + size + " jobs" }}</h5>
   </div>
   <div class="actions">
     <button color="primary" mat-button (click)="dialogRef.close()">

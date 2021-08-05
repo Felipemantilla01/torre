@@ -22,4 +22,13 @@ export class StatisticsService {
       },
     });
   }
+
+  getAvgPayment(tag: string, size: number = 10) {
+    return this.http.get(`${environment.backendEndpoint}/jobs/avg-pay`, {
+      params: {
+        tag,
+        size,
+      },
+    });
+  }
 }

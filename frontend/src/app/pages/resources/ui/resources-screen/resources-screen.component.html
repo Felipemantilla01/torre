@@ -2,3 +2,25 @@
   <div (click)="_location.back()">BACK</div>
   <div routerLink="/home">CANCEL</div>
 </div>
+
+<h1 style="text-align: center; font-size: 5vh;">Where learn {{ tag }}</h1>
+
+<div class="container">
+  <h1>Free</h1>
+  <div class="resources">
+    <app-resource-icon
+      *ngFor="let resource of free"
+      [item]="resource"
+      (click)="handleOpenFreeResource(resource)"
+    ></app-resource-icon>
+  </div>
+  <mat-divider></mat-divider>
+  <h1>Paid</h1>
+  <div class="resources">
+    <app-resource-icon
+      *ngFor="let resource of paid"
+      [item]="resource"
+      (click)="handleOpenPaidResource(resource)"
+    ></app-resource-icon>
+  </div>
+</div>

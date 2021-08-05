@@ -6,14 +6,13 @@ export class JobsController {
   constructor(private jobsService: JobsService) {}
   @Get()
   async getJobs(@Query() query: { tag: string }) {
-    const result = await this.jobsService
-      .getJobs({
-        'skill/role': {
-          text: query.tag,
-          experience: 'potential-to-develop',
-        },
-      })
-      .toPromise();
+    const result = await this.jobsService.getJobs(query.tag).toPromise();
     return result.data;
+  }
+
+  @Get('avg-pay')
+  async averagaPay(@Query() query: { tag: string; size: number }) {
+    const result = await this.jobsService.calculateAveragePay(query);
+    return result;
   }
 }

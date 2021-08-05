@@ -59,6 +59,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StatisticsComponent } from './pages/statistics/components/statistics/statistics.component';
 import { TagInfoModalComponent } from './pages/statistics/components/tag-info-modal/tag-info-modal.component';
 import { TypeTagModalComponent } from './pages/resources/components/type-tag-modal/type-tag-modal.component';
+import { ResourceIconComponent } from './pages/resources/components/resource-icon/resource-icon.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +70,7 @@ import { TypeTagModalComponent } from './pages/resources/components/type-tag-mod
     StatisticsComponent,
     TagInfoModalComponent,
     TypeTagModalComponent,
+    ResourceIconComponent,
   ],
   imports: [
     HttpClientModule,

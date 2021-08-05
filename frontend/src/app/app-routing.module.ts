@@ -7,6 +7,10 @@ import { StatisticsScreenComponent } from './pages/statistics/ui/statistics-scre
 
 const routes: Routes = [
   {
+    path: '/',
+    component: HomeScreenComponent,
+  },
+  {
     path: 'login',
     component: LoginScreenComponent,
   },
@@ -21,6 +25,9 @@ const routes: Routes = [
   {
     path: 'statistics',
     component: StatisticsScreenComponent,
+  },
+  {
+    redirectTo: '/',
   },
 ];
 

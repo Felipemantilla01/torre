@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Resource } from '../../models/Resource';
 
 @Component({
   selector: 'app-resource-icon',
@@ -6,9 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./resource-icon.component.scss'],
 })
 export class ResourceIconComponent implements OnInit {
-  @Input() item: { image: string; name: string } = {
+  @Input() item: Resource = {
     image: '',
     name: 'Loading...',
+    _id: '',
+    external: true,
+    link: '',
+    type: 'free',
   };
 
   constructor() {}

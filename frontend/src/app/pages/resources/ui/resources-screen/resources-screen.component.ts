@@ -4,6 +4,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TypeTagModalComponent } from '../../components/type-tag-modal/type-tag-modal.component';
+import { Resource } from '../../models/Resource';
+import { ResourcesService } from '../../services/resources.service';
 
 @Component({
   selector: 'app-resources-screen',
@@ -12,34 +14,29 @@ import { TypeTagModalComponent } from '../../components/type-tag-modal/type-tag-
 })
 export class ResourcesScreenComponent implements OnInit {
   tag: string = '';
-  free: any[] = [];
-  paid: any[] = [];
+  free: Resource[] = [];
+  paid: Resource[] = [];
   constructor(
     private route: ActivatedRoute,
     private dialog: MatDialog,
     public router: Router,
     public _location: Location,
-    private fs: AngularFirestore
+    private resourcesService: ResourcesService
   ) {
     this.tag = this.route.snapshot.paramMap.get('tag') || '';
   }
 
   async ngOnInit() {
-    const freeResources = await this.fs
-      .collection('free-resources')
-      .get()
-      .toPromise();
-    const paidResources = await this.fs
-      .collection('paid-resources')
-      .get()
-      .toPromise();
-    freeResources.docs.forEach((doc) => {
-      const data = doc.data();
-      this.free.push(data);
-    });
-    paidResources.docs.forEach((doc) => {
-      const data = doc.data();
-      this.paid.push(data);
+    const result = (await this.resourcesService
+      .getResources()
+      .toPromise()) as Array<Resource>;
+
+    result.forEach((resource) => {
+      if (resource.type === 'free') {
+        this.free.push(resource);
+      } else {
+        this.paid.push(resource);
+      }
     });
 
     if (this.tag === '' || this.tag === 'null') {
@@ -59,21 +56,11 @@ export class ResourcesScreenComponent implements OnInit {
 
   getResources() {}
 
-  handleOpenPaidResource(resource: {
-    type: string;
-    name: string;
-    link: string;
-    image: string;
-  }) {
+  handleOpenPaidResource(resource: Resource) {
     window.open(`${resource.link}${this.tag}`, '_blank');
   }
-  handleOpenFreeResource(resource: {
-    type: string;
-    name: string;
-    image: string;
-    link?: string;
-  }) {
-    if (resource.type == 'out') {
+  handleOpenFreeResource(resource: Resource) {
+    if (resource.external) {
       window.open(`${resource.link}${this.tag}`, '_blank');
     }
   }

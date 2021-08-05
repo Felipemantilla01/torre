@@ -1,0 +1,78 @@
+[
+  {
+    "_id": {
+      "$oid": "610c57078243ee3df5753022"
+    },
+    "image": "https://firebasestorage.googleapis.com/v0/b/torre-edc01.appspot.com/o/resources%2Ffazt.png?alt=media&token=8e0d83d1-d536-4330-89fd-8d0fde4a8a97",
+    "link": "https://www.faztweb.com/contenido?search=",
+    "name": "Fazt Web",
+    "type": "free",
+    "external": true
+  },
+  {
+    "_id": {
+      "$oid": "610c5a8a16b9f2ad0a28cc0c"
+    },
+    "image": "https://firebasestorage.googleapis.com/v0/b/torre-edc01.appspot.com/o/resources%2Fedx.png?alt=media&token=028e87c9-c789-48b0-8765-86c5395099f2",
+    "link": "https://www.edx.org/search?q=",
+    "name": "EDX",
+    "type": "free",
+    "external": true,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "610c603e676b9dad6331b5cb"
+    },
+    "image": "https://firebasestorage.googleapis.com/v0/b/torre-edc01.appspot.com/o/resources%2Fyoutube.png?alt=media&token=278c7192-41bc-43a5-97fe-0f2e5ed3f68c",
+    "link": "https://www.youtube.com/results?search_query=",
+    "name": "Youtube",
+    "type": "free",
+    "external": true,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "610c6086676b9dad6331b5cf"
+    },
+    "image": "https://firebasestorage.googleapis.com/v0/b/torre-edc01.appspot.com/o/resources%2Fcoursera.png?alt=media&token=9e1476ef-d353-4b04-91d2-509262da358a",
+    "link": "https://www.coursera.org/search?query=",
+    "name": "Coursera",
+    "type": "paid",
+    "external": true,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "610c60a5676b9dad6331b5d1"
+    },
+    "image": "https://firebasestorage.googleapis.com/v0/b/torre-edc01.appspot.com/o/resources%2Fplatzi.jpg?alt=media&token=58b723a9-b2b4-49c8-ac66-49daa4ca6c57",
+    "link": "https://platzi.com/search/?search=",
+    "name": "Platzi",
+    "type": "paid",
+    "external": true,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "610c60c0676b9dad6331b5d3"
+    },
+    "image": "https://firebasestorage.googleapis.com/v0/b/torre-edc01.appspot.com/o/resources%2Fudemy.png?alt=media&token=a6c02c1a-d420-421b-91e3-c6b32d74d5df",
+    "link": "https://www.udemy.com/courses/search/?src=ukw&q=",
+    "name": "Udemy",
+    "type": "paid",
+    "external": true,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "610c60df676b9dad6331b5d5"
+    },
+    "image": "https://firebasestorage.googleapis.com/v0/b/torre-edc01.appspot.com/o/resources%2Fudacity.png?alt=media&token=d5a3d574-9eff-4e1c-b592-5af9e1e6540b",
+    "link": "https://www.udacity.com/courses/all?search=",
+    "name": "Udacity",
+    "type": "paid",
+    "external": true,
+    "__v": 0
+  }
+]

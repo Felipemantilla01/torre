@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  database:
+    image: mongo
+    container_name: mongodb
+    volumes:
+      - mongodb:/data/db
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+  backend:
+    environment:
+      - ENV_DESCRIPTION=docker_environment
+      - MONGODB_HOST=database:27017
+      - PORT=5000
+    links:
+      - database
+    container_name: whats-next-backend-container
+    image: whats-next-backend-image
+    build: ./backend
+    command: npm run start:debug
+    ports:
+      - 5000:5000
+    # networks:
+    #   - nesjs-network
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: unless-stopped
+  frontend:
+    container_name: whats-next-frontend-container
+    image: whats-next-frontend-image
+    build: ./frontend
+    ports:
+      - 4200:80
+    # networks:
+    #   - nesjs-network
+    restart: unless-stopped
+# networks:
+#   nesjs-network:
+volumes:
+  mongodb:

@@ -36,10 +36,9 @@
     </mat-form-field>
   </div>
   <div class="charts">
-    <div class="dark">
+    <div class="chart dark">
       <h1 class="title">Posted Jobs</h1>
       <ngx-charts-bar-horizontal
-        [view]="[800, 600]"
         [scheme]="colorScheme"
         [results]="jobs"
         [gradient]="gradient"
@@ -54,10 +53,9 @@
       >
       </ngx-charts-bar-horizontal>
     </div>
-    <div class="dark">
+    <div class="chart dark">
       <h1 class="title">Developers with experience (> 1 Year)</h1>
       <ngx-charts-bar-horizontal
-        [view]="[800, 600]"
         [scheme]="colorScheme"
         [results]="developers"
         [gradient]="gradient"

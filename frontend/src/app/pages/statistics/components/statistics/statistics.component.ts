@@ -41,7 +41,7 @@ export class StatisticsComponent implements OnInit {
   // options
   showXAxis = true;
   showYAxis = true;
-  gradient = false;
+  gradient = true;
   showLegend = true;
   showXAxisLabel = true;
   showYAxisLabel = true;
@@ -59,6 +59,9 @@ export class StatisticsComponent implements OnInit {
   }
 
   async ngOnInit() {
+    if (screen.width < 600) {
+      this.showLegend = false;
+    }
     this.loading = true;
     for (let lenguage of this.items) {
       this.getJobInfoAndAddToChart(lenguage);
@@ -190,7 +193,7 @@ export class StatisticsComponent implements OnInit {
     this.developers = [...this.developers.sort(this.sort)];
   }
 
-  sort(a:any, b:any) {
+  sort(a: any, b: any) {
     var nameA = a.name.toUpperCase(); // ignore upper and lowercase
     var nameB = b.name.toUpperCase(); // ignore upper and lowercase
     if (nameA < nameB) {

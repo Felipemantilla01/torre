@@ -1,8 +1,19 @@
-
+<div class="description-container">
+  <h1 class="description">
+    Have you ever wondered what to study? <span>What's next?</span> Know and
+    compare which languages ​​and frameworks are the most requested and what
+    they offer around the world, maybe I can help you decide what to do next in
+    your career. <br>
+    <span class="sub">Visit the statistics to know the comparisons (all the statistics info comes from <a href="https://torre.co/">Torre</a>) , if you already have a decision visit the resources</span>
+  </h1>
+</div>
 <div class="container">
-
-  <div class="menu-option mat-elevation-z6" *ngFor="let option of menuOptions" (click)="handleRedirect(option.link)">
-    <img [src]="option.image" alt="">
-    <h1>{{option.title}}</h1>
+  <div
+    class="menu-option mat-elevation-z6"
+    *ngFor="let option of menuOptions"
+    (click)="handleRedirect(option.link)"
+  >
+    <img [src]="option.image" alt="" />
+    <h1>{{ option.title }}</h1>
   </div>
 </div>

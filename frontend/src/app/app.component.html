@@ -1,15 +1,29 @@
-<mat-toolbar class="mat-elevation-z6" style="z-index: 1000;">
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
-  >
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>What's Next?</span>
-  <span class="example-spacer"></span>
-  <span>By: Felipe Mantilla</span>
+<mat-drawer-container class="container" autosize>
+  <mat-toolbar class="mat-elevation-z6" style="z-index: 1000">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      (click)="drawer.toggle()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>What's Next?</span>
+  </mat-toolbar>
 
-</mat-toolbar>
+  <router-outlet></router-outlet>
 
-<router-outlet></router-outlet>
+  <mat-drawer #drawer class="sidenav" mode="over">
+    <button mat-button color="primary" (click)="drawer.close()" routerLink="/home">Home</button>
+    <button mat-button color="primary" (click)="drawer.close()" routerLink="/statistics">Statistics</button>
+    <button mat-button color="primary" (click)="drawer.close()" routerLink="/resources/null">Resources</button>
+    <!-- <button mat-button color="primary" (click)="drawer.close()" routerLink="/about">About</button> -->
+
+  </mat-drawer>
+
+</mat-drawer-container>
+
+<div class="footer">
+  <h5>Developed by</h5>
+  <h4>felipemantilla@outlook.es</h4>
+</div>

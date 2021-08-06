@@ -1,9 +1,10 @@
 .container {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: hidden;
   
 }
 
@@ -17,7 +18,7 @@
   border-radius: 3vh;
   margin: 0 6vh;
   cursor: pointer;
-  background-color:#232837;
+  background-color: #232837;
   img {
     width: 100%;
   }
@@ -29,5 +30,46 @@
 
 .menu-option:hover {
   // background-color:#1b1e27;
-  box-shadow: 0 10px 13px -6px rgba(0,0,0,.2),0 20px 31px 3px rgba(0,0,0,.14),0 8px 38px 7px rgba(0,0,0,.12)!important;
+  box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2),
+    0 20px 31px 3px rgba(0, 0, 0, 0.14), 0 8px 38px 7px rgba(0, 0, 0, 0.12) !important;
+}
+.description-container {
+  margin: 2vh 0;
+  display: flex;
+  justify-content: center;
+  .description {
+    font-weight: bold;
+    max-width: 70vw;
+    text-align: center;
+    font-size: 3vh;
+    span {
+      color: #ccdc39;
+    }
+    span.sub {
+      font-size: 2.5vh;
+      color: #455066;
+      a {
+        color: #ccdc39;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .description-container {
+    margin: 1vh;
+    .description {
+      max-width: 90%;
+    }
+  }
+
+  .container {
+    width: auto;
+    margin: 2vh;
+    justify-content: flex-start;
+  }
+  .menu-option {
+    min-width: 70vw;
+    margin: 0 2vh;
+  }
 }

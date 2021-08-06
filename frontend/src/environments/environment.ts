@@ -13,7 +13,7 @@ export const environment = {
     appId: '1:650663986678:web:39a77000497e6aee04f3d7',
     measurementId: 'G-RHVNJV3GHF',
   },
-  backendEndpoint: 'http://localhost:5000'
+  backendEndpoint: 'http://128.199.1.167:5000',
 };
 
 /*

@@ -19,7 +19,7 @@ services:
     container_name: whats-next-backend-container
     image: whats-next-backend-image
     build: ./backend
-    command: npm run start:debug
+    command: npm run start:prod
     ports:
       - 5000:5000
     # networks:

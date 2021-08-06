@@ -15,7 +15,7 @@
     <button
       color="primary"
       mat-raised-button
-      (click)="tag == '' ? null : dialogRef.close(tag)"
+      (click)="tag == '' ? null : handleRedirect(tag)"
     >
       Learn {{ tag }}
     </button>

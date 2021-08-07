@@ -32,10 +32,12 @@ August 5 | 4:00 pm - 7:00 pm
 - integrate configs enpoints in frontend, to allow create new resources with out deploy again
 - deploy project in digital ocean
 
-August 6 | 3:00 pm - 10:00 pm
+August 6 | 3:00 pm - 8:00 pm
 
 - adjust design to responsive
 - add toolbar to navigate
 - add recalculate button for avg payment
 - add description to home page
-- add ssl certificates to get https endpoints.
+- test application, and deploy.
+- Documentation
+
